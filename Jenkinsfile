@@ -6,8 +6,8 @@ pipeline {
   }
 
   environment {
-    DOCKER_REGISTRY = ''
-    IMAGE_NAME = ''
+    DOCKER_REGISTRY = 'public.ecr.aws/e4y1d5a4/'
+    IMAGE_NAME = 'helloworld'
     IMAGE_TAG = env.BRANCH_NAME.toLowerCase() + '-' + env.BUILD_NUMBER
     K8S_NAMESPACE = 'default'
     K8S_DEPLOYMENT_NAME = 'myapp'
