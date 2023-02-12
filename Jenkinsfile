@@ -1,9 +1,5 @@
 pipeline {
-  agent {
-//     kubernetes {
-//       label 'mypod'
-//     }
-  }
+  agent any
 
   environment {
     AWS_ACCESS_KEY_ID = "AWS_ACCESS_KEY_ID"
