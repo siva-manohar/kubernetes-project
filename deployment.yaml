@@ -2,7 +2,7 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: ""
+  name: "helloworld"
   namespace: "default"
   labels:
     app: "k8s-node"
@@ -17,8 +17,8 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: ""
-          image: "public.ecr.aws/e4y1d5a4/helloworld"
+        - name: "helloworld"
+          image: "937200147656.dkr.ecr.ap-south-1.amazonaws.com/helloworld"
           resources:
             requests:
               memory: "64Mi"
@@ -31,7 +31,7 @@ spec:
 apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"
 metadata:
-  name: ""
+  name: "helloworld"
   namespace: "default"
   labels:
     app: "k8s-node"
