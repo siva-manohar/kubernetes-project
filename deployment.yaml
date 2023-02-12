@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: "helloworld"
-          image: "937200147656.dkr.ecr.ap-south-1.amazonaws.com/helloworld"
+          image: "937200147656.dkr.ecr.ap-south-1.amazonaws.com/helloworld:SAMPLE-PROJECT-buildNumber"
           resources:
             requests:
               memory: "64Mi"
