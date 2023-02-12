@@ -28,7 +28,7 @@ spec:
               cpu: "500m"
 
 ---
-apiVersion: "autoscaling/v2beta1"
+apiVersion: "autoscaling/v2"
 kind: "HorizontalPodAutoscaler"
 metadata:
   name: "helloworld"
@@ -38,7 +38,7 @@ metadata:
 spec:
   scaleTargetRef:
     kind: "Deployment"
-    name: ""
+    name: "helloworld"
     apiVersion: "apps/v1beta1"
   minReplicas: 1
   maxReplicas: 1
