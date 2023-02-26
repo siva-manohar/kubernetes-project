@@ -12,10 +12,10 @@ pipeline {
       steps {
         sh '''
 	 whoami
-         aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-         aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+         aws configure set aws_access_key_id AKIAZ4DKXZRIM22HVBHF
+         aws configure set aws_secret_access_key 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
          aws configure set default.region ap-south-1
-         echo $AWS_ACCESS_KEY_ID
+         #echo $AWS_ACCESS_KEY_ID
          DOCKER_LOGIN_PASS=$(aws ecr get-login-password  --region ap-south-1)
          docker login -u AWS -p $DOCKER_LOGIN_PASS https://678828690512.dkr.ecr.ap-south-1.amazonaws.com/helloworld
          docker build -t 678828690512.dkr.ecr.ap-south-1.amazonaws.com/helloworld:SAMPLE-PROJECT-${BUILD_NUMBER} .
