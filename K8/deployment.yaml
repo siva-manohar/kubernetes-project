@@ -6,7 +6,7 @@ metadata:
   labels:
     app: "k8s-node"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "k8s-node"
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: "helloworld"
-          image: "678828690512.dkr.ecr.ap-south-1.amazonaws.com/helloworld:SAMPLE-PROJECT-buildNumber"
+          image: "277130520464.dkr.ecr.ap-south-1.amazonaws.com/helloworld:SAMPLE-PROJECT-buildNumber"
           resources:
             requests:
               memory: "64Mi"
