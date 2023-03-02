@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_REGISTRY="277130520464.dkr.ecr.us-east-1.amazonaws.com"
-    K8S_NAMESPACE = 'default'
+    K8S_NAMESPACE = 'backend'
     K8S_DEPLOYMENT_NAME = 'myapp'
   }
 
