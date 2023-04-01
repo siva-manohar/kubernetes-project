@@ -1,7 +1,7 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "helloworld"
+  name: "project1"
   namespace: "backend"
   labels:
     app: "k8s-node"
@@ -16,7 +16,7 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: "helloworld"
+        - name: "project1"
           image: "599032366287.dkr.ecr.ap-south-1.amazonaws.com/project1:SAMPLE-PROJECT-buildNumber"
           resources:
             requests:
