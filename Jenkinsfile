@@ -12,8 +12,8 @@ pipeline {
       steps {
         sh '''
 	 whoami
-         aws configure set aws_access_key_id AKIAYW6I4QTHYUFMX2VV
-         aws configure set aws_secret_access_key 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
+         aws configure set aws_access_key_id AKIAYW6I4QTHU6AJJU23
+         aws configure set aws_secret_access_key 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
          aws configure set default.region ap-south-1
          #echo $AWS_ACCESS_KEY_ID
          #DOCKER_LOGIN_PASS=$(aws ecr get-login-password  --region ap-south-1)
