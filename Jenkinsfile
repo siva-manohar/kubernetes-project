@@ -20,7 +20,7 @@ pipeline {
          #docker login -u AWS -p $DOCKER_LOGIN_PASS https://678828690512.dkr.ecr.us-east-1.amazonaws.com/helloworld
          aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
 	 docker build -t $DOCKER_REGISTRY/project-1:SAMPLE-PROJECT-${BUILD_NUMBER} .
-         docker push $DOCKER_REGISTRY/project1:SAMPLE-PROJECT-${BUILD_NUMBER}
+         docker push $DOCKER_REGISTRY/project-1:SAMPLE-PROJECT-${BUILD_NUMBER}
 	  '''
       }
     }
