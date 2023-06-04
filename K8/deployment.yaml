@@ -1,12 +1,12 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "project1"
+  name: "project-1"
   namespace: "backend"
   labels:
     app: "k8s-node"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "k8s-node"
@@ -16,8 +16,8 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: "project1"
-          image: "599032366287.dkr.ecr.ap-south-1.amazonaws.com/project1:SAMPLE-PROJECT-buildNumber"
+        - name: "project-11"
+          image: "195394092895.dkr.ecr.eu-west-1.amazonaws.com/project-1:SAMPLE-PROJECT-buildNumber"
           resources:
             requests:
               memory: "64Mi"
