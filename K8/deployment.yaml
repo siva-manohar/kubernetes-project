@@ -1,7 +1,7 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "project-1"
+  name: "kubeproject"
   namespace: "backend"
   labels:
     app: "k8s-node"
@@ -16,8 +16,8 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: "project-11"
-          image: "195394092895.dkr.ecr.eu-west-1.amazonaws.com/project:newbuildNumber"
+        - name: "kubeproject"
+          image: "092101872227.dkr.ecr.ap-southeast-1.amazonaws.com/automation-docker:buildNumber"
           resources:
             requests:
               memory: "64Mi"
