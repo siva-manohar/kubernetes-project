@@ -13,7 +13,7 @@ pipeline {
         sh '''
 	 whoami
          aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
-	 docker build -t automation-docker.
+	 docker build -t automation-docker .
          docker tag automation-docker:latest $DOCKER_REGISTRY/automation-docker:${BUILD_NUMBER}
          docker push $DOCKER_REGISTRY/automation-docker:${BUILD_NUMBER}
 	  '''
