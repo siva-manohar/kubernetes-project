@@ -24,6 +24,7 @@ pipeline {
       steps {
         sh '''
             sed "s/buildNumber/${BUILD_NUMBER}/g" K8/deployment.yaml > deployment-new.yaml
+	    mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$HOME/bin:$PATH
             kubectl apply -f deployment-new.yaml -n $K8S_NAMESPACE
             kubectl apply -f service.yaml -n $K8S_NAMESPACE
            '''
