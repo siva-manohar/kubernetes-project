@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    DOCKER_REGISTRY="092101872227.dkr.ecr.ap-southeast-1.amazonaws.com"
+    DOCKER_REGISTRY="462693274005.dkr.ecr.us-east-2.amazonaws.com"
     K8S_NAMESPACE = 'backend'
     K8S_DEPLOYMENT_NAME = 'kubeproject'
   }
@@ -13,9 +13,9 @@ pipeline {
         sh '''
 	 whoami
          aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
-	 docker build -t automation-docker .
-         docker tag automation-docker:latest $DOCKER_REGISTRY/automation-docker:${BUILD_NUMBER}
-         docker push $DOCKER_REGISTRY/automation-docker:${BUILD_NUMBER}
+	 docker build -t docker-server .
+         docker tag docker-server:latest $DOCKER_REGISTRY/docker-server:${BUILD_NUMBER}
+         docker push $DOCKER_REGISTRY/docker-server:${BUILD_NUMBER}
 	  '''
       }
     }

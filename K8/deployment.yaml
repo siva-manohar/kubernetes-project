@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: "kubeproject"
-          image: "092101872227.dkr.ecr.ap-southeast-1.amazonaws.com/automation-docker:buildNumber"
+          image: "092101872227.dkr.ecr.ap-southeast-1.amazonaws.com/docker-server:buildNumber"
           resources:
             requests:
               memory: "64Mi"
