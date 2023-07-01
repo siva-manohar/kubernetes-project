@@ -14,7 +14,7 @@ pipeline {
 	 whoami
          aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
 	 docker build -t docker-server .
-         docker tag docker-server:latest $DOCKER_REGISTRY/docker-sever:${BUILD_NUMBER}
+         docker tag docker-server:latest $DOCKER_REGISTRY/docker-server:${BUILD_NUMBER}
          docker push $DOCKER_REGISTRY/docker-server:${BUILD_NUMBER}
 	  '''
       }
