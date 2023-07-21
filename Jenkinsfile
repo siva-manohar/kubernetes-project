@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_REGISTRY="092101872227.dkr.ecr.ap-southeast-1.amazonaws.com"
-    K8S_NAMESPACE = 'backend'
+    K8S_NAMESPACE = 'nodejs'
     K8S_DEPLOYMENT_NAME = 'kubeproject'
   }
 

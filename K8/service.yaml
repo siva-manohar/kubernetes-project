@@ -2,7 +2,7 @@ apiVersion: "v1"
 kind: "Service"
 metadata:
   name: "kubeproject"
-  namespace: "backend"
+  namespace: "nodejs"
   labels:
     app: "k8s-node"
 spec:
