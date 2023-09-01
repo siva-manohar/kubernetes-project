@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh '''
 	 whoami
-         aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+         aws ecr get-login-password  --region us-east-1  | docker login --username AWS --password-stdin $DOCKER_REGISTRY
 	 docker build -t nodejs_k8s .
          docker tag nodejs_k8s:latest $DOCKER_REGISTRY/nodejs_k8s:${BUILD_NUMBER}
          docker push $DOCKER_REGISTRY/nodejs_k8s:${BUILD_NUMBER}
