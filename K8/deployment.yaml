@@ -6,7 +6,7 @@ metadata:
   labels:
     app: "k8s-node"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "k8s-node"
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: "kubeproject"
-          image: "713179705108.dkr.ecr.us-east-1.amazonaws.com/nodejs_k8s:buildNumber"
+          image: "642611985562.dkr.ecr.us-east-2.amazonaws.com/project_kubernetes:buildNumber"
           resources:
             requests:
               memory: "64Mi"
