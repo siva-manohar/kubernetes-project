@@ -1,12 +1,12 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "kubeproject"
-  namespace: "nodejs"
+  name: "app_scanner"
+  namespace: "scanner"
   labels:
     app: "k8s-node"
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: "k8s-node"
@@ -16,8 +16,8 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: "kubeproject"
-          image: "642611985562.dkr.ecr.us-east-2.amazonaws.com/project_kubernetes:buildNumber"
+        - name: "app_scanner"
+          image: "440038317783.dkr.ecr.us-east-1.amazonaws.com/app_scanner:buildNumber"
           resources:
             requests:
               memory: "64Mi"

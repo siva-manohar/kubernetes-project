@@ -1,8 +1,8 @@
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "kubeproject"
-  namespace: "nodejs"
+  name: "app_scanner"
+  namespace: "scanner"
   labels:
     app: "k8s-node"
 spec:
