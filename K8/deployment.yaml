@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: "app_scanner"
-          image: "440038317783.dkr.ecr.us-east-1.amazonaws.com/app_scanner:buildNumber"
+          image: "232679411998.dkr.ecr.us-east-1.amazonaws.com/app_scanner:buildNumber"
           resources:
             requests:
               memory: "64Mi"
