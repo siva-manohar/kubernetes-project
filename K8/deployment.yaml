@@ -1,7 +1,7 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "app_scanner"
+  name: "app-scanner"
   namespace: "scanner"
   labels:
     app: "k8s-node"
@@ -16,7 +16,7 @@ spec:
         app: "k8s-node"
     spec:
       containers:
-        - name: "app_scanner"
+        - name: "app-scanner"
           image: "232679411998.dkr.ecr.us-east-1.amazonaws.com/app_scanner:buildNumber"
           resources:
             requests:
