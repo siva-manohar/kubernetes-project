@@ -16,8 +16,8 @@ pipeline{
             steps{
                 sh '''
                 sed "s/buildNumber/${BUILD_NUMBER}/g" K8/deployment.yaml > deployment-new.yaml
-                kubectl apply -f deployment-new.yaml
-                kubectl apply -f K8/service.yaml
+                /var/lib/jenkins/kubectl apply -f deployment-new.yaml
+                /var/lib/jenkins/kubectl apply -f K8/service.yaml
                 '''
             }
 
