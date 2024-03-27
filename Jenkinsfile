@@ -4,6 +4,7 @@ pipeline{
         stage("build"){
             steps{
                 sh '''
+                whoami
                 aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267090797.dkr.ecr.us-east-1.amazonaws.com
                 docker build -t 533267090797.dkr.ecr.us-east-1.amazonaws.com/kubernetes_project:${BUILD_NUMBER} .
                 docker push 533267090797.dkr.ecr.us-east-1.amazonaws.com/kubernetes_project:${BUILD_NUMBER}
