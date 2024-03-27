@@ -1,24 +1,25 @@
-pipeline {
+pipeline{
     agent any
-    stages {
+    stages{
         stage("build"){
             steps{
                 sh '''
-                aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 232679411998.dkr.ecr.us-east-1.amazonaws.com
-                docker build -t app_scanner .
-                docker tag app_scanner:latest 232679411998.dkr.ecr.us-east-1.amazonaws.com/app_scanner:${BUILD_NUMBER}
-                docker push 232679411998.dkr.ecr.us-east-1.amazonaws.com/app_scanner:${BUILD_NUMBER}
+                aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267090797.dkr.ecr.us-east-1.amazonaws.com
+                docker build -t 533267090797.dkr.ecr.us-east-1.amazonaws.com/kubernetes_project:${BUILD_NUMBER} .
+                docker push 533267090797.dkr.ecr.us-east-1.amazonaws.com/kubernetes_project:${BUILD_NUMBER}
                 '''
             }
+
         }
         stage("deploy"){
             steps{
                 sh '''
                 sed "s/buildNumber/${BUILD_NUMBER}/g" K8/deployment.yaml > deployment-new.yaml
-                /var/lib/jenkins/kubectl apply -f deployment-new.yaml -n scanner
-                /var/lib/jenkins/kubectl apply -f K8/service.yaml -n scanner
+                kubectl apply -f deployment-new.yaml
+                kubectl apply -f K8/service.yaml
                 '''
             }
+
         }
     }
 }
