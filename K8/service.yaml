@@ -4,7 +4,7 @@ metadata:
   name: "app-scanner"
   namespace: "scanner"
   labels:
-    app: "k8s-node"
+    app: "frontend"
 spec:
   ports:
     - protocol: "TCP"
