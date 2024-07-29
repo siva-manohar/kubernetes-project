@@ -4,16 +4,16 @@ metadata:
   name: "app-scanner"
   namespace: "scanner"
   labels:
-    app: "k8s-node"
+    app: "frontend"
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: "k8s-node"
+      app: "frontend"
   template:
     metadata:
       labels:
-        app: "k8s-node"
+        app: "frontend"
     spec:
       containers:
         - name: "app-scanner"
@@ -25,3 +25,8 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
+          tolerations:
+            - key: "name"
+              operator: "Equal"
+              value: "frontend_group"
+              effect: "NoSchedule"
