@@ -3,6 +3,8 @@ kind: "Service"
 metadata:
   name: "app-scanner"
   namespace: "scanner"
+  labels:
+    app: "k8s-node"
 spec:
   ports:
     - protocol: "TCP"
