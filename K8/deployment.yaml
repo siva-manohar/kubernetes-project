@@ -1,4 +1,4 @@
-apiVersion: "apps/v2"
+apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
   name: "app-scanner"
@@ -25,8 +25,8 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "500m"
-          tolerations:
-            - key: "name"
-              operator: "Equal"
-              value: "frontend_group"
-              effect: "NoSchedule"
+      tolerations:
+        - key: "name"
+          operator: "Equal"
+          value: "frontend_group"
+          effect: "NoSchedule"
