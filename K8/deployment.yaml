@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: "app-scanner"
-          image: "590183962065.dkr.ecr.us-east-1.amazonaws.com/node_project:buildNumber"
+          image: "590183962065.dkr.ecr.us-east-1.amazonaws.com/kubernetes_project:xyz"
           resources:
             requests:
               memory: "64Mi"
