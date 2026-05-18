@@ -3,7 +3,7 @@ name: Tanusha K8s Deployment
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-push:
